@@ -7,7 +7,7 @@ import camin3 from '../../assets/images/camin3.jpg';
 const Home = () => {
   return (
     <div className="home-container">
-      <h1 className="text-center">Welcome to ULBS-Booking</h1>
+      <h1 className="typing-text">Welcome to ULBS-Booking</h1>
       <p className="lead text-center">
       Find a room in our student dorm , perfect for your university life."
       </p>

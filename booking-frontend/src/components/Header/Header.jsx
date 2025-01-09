@@ -1,7 +1,25 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { useState, useEffect } from 'react';
+import { FaSun, FaMoon } from 'react-icons/fa';  // Iconițe pentru soare și lună
 
 const Header = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark');
+      document.body.classList.remove('light');
+    } else {
+      document.body.classList.add('light');
+      document.body.classList.remove('dark');
+    }
+  }, [darkMode]);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"> 
       <div className="container">
@@ -40,7 +58,14 @@ const Header = () => {
               Search
             </button>
           </form>
-
+          <div className="theme-toggle-container ms-3">
+            <label className="switch">
+              <input type="checkbox" checked={darkMode} onChange={toggleTheme} />
+              <span className="slider round">
+                {darkMode ? <FaMoon /> : <FaSun />}  
+              </span>
+            </label>
+          </div>
         </div>
       </div>
     </nav>

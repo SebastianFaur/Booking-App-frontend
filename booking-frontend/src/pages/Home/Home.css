@@ -31,3 +31,32 @@
   body{
     justify-content: center;
   }
+
+  .typing-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #007bff;
+    white-space: nowrap;
+    overflow: hidden; /* Ascunde restul textului */
+    border-right: 3px solid #007bff; /* Simulează cursorul */
+    width: 0; /* Începe fără text vizibil */
+    animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
+  }
+  
+  /* Animația de tipărire */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 35%;
+    }
+  }
+  
+  /* Animația de blink (cursor) */
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
