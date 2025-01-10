@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { useState, useEffect } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';  // Iconițe pentru soare și lună
+import { FaSun, FaMoon, FaUser } from 'react-icons/fa'; 
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -62,9 +62,14 @@ const Header = () => {
             <label className="switch">
               <input type="checkbox" checked={darkMode} onChange={toggleTheme} />
               <span className="slider round">
-                {darkMode ? <FaMoon /> : <FaSun />}  
+                {darkMode ? <FaMoon /> : <FaSun />}
               </span>
             </label>
+          </div>
+          <div className="login-icon ms-3">
+            <Link className="login-link" to="/login" >
+              <FaUser size={24} /> {/* Iconița utilizatorului */}
+            </Link>
           </div>
         </div>
       </div>

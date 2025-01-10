@@ -101,3 +101,21 @@
 .light .navbar-nav .nav-link:hover {
   color: #007bff;
 }
+
+.login-icon {
+  display: flex;
+  align-items: center;
+}
+
+.login-link {
+  color: #555; /* Culoare implicită */
+  text-decoration: none; /* Fără subliniere */
+  transition: color 0.3s ease;
+}
+
+.login-link:hover {
+  color: #007bff; /* Culoare la hover */
+}
+
+
+
