@@ -1,4 +1,46 @@
-/* Stilul switch-ului */
+/* Navbar Transparent cu Efect Blur */
+.navbar {
+  background: rgba(255, 255, 255, 0.8); /* transparent background */
+  backdrop-filter: blur(10px); /* Efect de blur */
+  transition: background-color 0.3s ease; /* Tranziție lină pentru background */
+}
+
+.navbar .navbar-nav .nav-link {
+  font-weight: 500;
+  font-size: 16px;
+  color: #555;
+  transition: color 0.3s ease, transform 0.3s ease; /* Tranziție animată */
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #6186ff; /* Culoare la hover */
+  transform: translateY(-2px); /* Efect de mișcare în sus */
+}
+
+.navbar .navbar-toggler {
+  background-color: #ff6f61; /* Culoare pentru toggle icon */
+}
+
+/* Stiluri pentru Dark Mode */
+.dark .navbar {
+  background: rgba(34, 34, 34, 0.8); /* Transparent, dar pe fundal întunecat */
+  backdrop-filter: blur(10px); /* Efect blur pentru dark mode */
+}
+
+.dark .navbar-nav .nav-link {
+  color: #ddd; /* Culoare deschisă pentru dark mode */
+}
+
+/* Stiluri pentru Light Mode */
+.light .navbar {
+  background: rgba(255, 255, 255, 0.8); /* Transparent background */
+  backdrop-filter: blur(10px);
+}
+
+.light .navbar-nav .nav-link {
+  color: #555; /* Culoare deschisă pentru light mode */
+}
+
 .theme-toggle-container .switch {
   position: relative;
   display: inline-block;
@@ -62,60 +104,36 @@
 .theme-toggle-container .slider svg {
   color: white;
   font-size: 18px;
+  transition: opacity 0.3s ease;
 }
 
-/* Stiluri pentru Dark Mode */
-.dark {
-  background-color: #333;
-  color: white;
+.theme-toggle-container input:checked + .slider svg {
+  opacity: 0.8; /* Opacitate pe hover */
 }
 
-.dark .navbar {
-  background-color: #222;
-}
-
-.dark .navbar-nav .nav-link {
-  color: black;
-}
-
-.dark .navbar-nav .nav-link:hover {
-  color: #007bff;
-}
-
-
-
-/* Stiluri pentru Light Mode */
-.light {
-  background-color: white;
-  color: black;
-}
-
-.light .navbar {
-  background-color: #f8f9fa;
-}
-
-.light .navbar-nav .nav-link {
-  color: #555;
-}
-
-.light .navbar-nav .nav-link:hover {
-  color: #007bff;
-}
-
+/* Stiluri pentru Login Icon */
 .login-icon {
   display: flex;
   align-items: center;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .login-link {
   color: #555; /* Culoare implicită */
-  text-decoration: none; /* Fără subliniere */
+  text-decoration: none;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.login-link:hover {
-  color: #007bff; /* Culoare la hover */
+.login-icon:hover {
+  background-color: #616bff; /* Culoare de fundal la hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-
-
+.login-link:hover {
+  color: #fff; /* Culoare albă pentru hover */
+}

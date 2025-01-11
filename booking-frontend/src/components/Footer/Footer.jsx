@@ -15,7 +15,7 @@ const Footer = () => {
 
   return (
     <footer className={`footer ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}>
-      <div className="text-center p-3">
+      <div className="text-center p-1">
         © 2025 BookingApp. All Rights Reserved.
       </div>
     </footer>

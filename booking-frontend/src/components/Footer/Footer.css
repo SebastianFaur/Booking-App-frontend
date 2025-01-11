@@ -1,27 +1,42 @@
 /* Tema Dark */
 .dark {
-    background-color: #333;
-    color: white;
-  }
-  
-  .dark footer {
-    background-color: #222;
-    color: white;
-  }
-  
-  /* Tema Light */
-  .light {
-    background-color: #f8f9fa;
-    color: black;
-  }
-  
-  .light footer {
-    background-color: #f8f9fa;
-    color: black;
-  }
-  
-  footer {
-    padding: 10px;
-    text-align: center;
-  }
-  
+  background-color: #333;
+  color: white;
+}
+
+.dark footer {
+  background-color: #111; /* Fundal negru mai intens */
+  color: white; /* Text alb */
+}
+
+/* Tema Light */
+.light {
+  background-color: #f8f9fa;
+  color: black;
+}
+
+.light footer {
+  background-color: #f8f9fa;
+  color: black;
+}
+
+footer {
+  position: relative; 
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 15px; /* Micșorăm dimensiunea fontului */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Ajustăm spațiul dintre footer și conținut */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linie de separare subtilă */
+}
+
+footer.bg-dark {
+  background-color: #111; /* Fundal mai închis */
+  color: #ddd; /* Text alb-gri pentru contrast */
+}
+
+footer.bg-light {
+  background-color: #f8f9fa;
+  color: #555; /* Text gri închis */
+}

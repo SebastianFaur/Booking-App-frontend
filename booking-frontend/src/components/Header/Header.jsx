@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { useState, useEffect } from 'react';
-import { FaSun, FaMoon, FaUser } from 'react-icons/fa'; 
+import { FaSun, FaMoon, FaUser, FaSearch, FaHome, FaInfoCircle, FaEnvelope } from 'react-icons/fa'; 
+import AOS from 'aos';  // Importăm AOS
+import 'aos/dist/aos.css'; // Importăm stilurile AOS
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -11,6 +13,7 @@ const Header = () => {
   };
 
   useEffect(() => {
+    AOS.init({ duration: 1000 });  
     if (darkMode) {
       document.body.classList.add('dark');
       document.body.classList.remove('light');
@@ -21,9 +24,11 @@ const Header = () => {
   }, [darkMode]);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"> 
+    <nav className={`navbar navbar-expand-lg navbar-light fixed-top shadow-sm custom-navbar ${darkMode ? 'navbar-dark' : 'navbar-light'}`} data-aos="fade-down">
       <div className="container">
-        <Link className="navbar-brand" to="/">BookingApp</Link>
+        <Link className="navbar-brand custom-brand" to="/" data-aos="zoom-in">
+          BookingApp
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -35,30 +40,39 @@ const Header = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+        <div className="collapse navbar-collapse" id="navbarNav" data-aos="fade-up">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item" data-aos="fade-left">
+              <Link className="nav-link custom-link" to="/">
+                <FaHome size={20} className="me-2" />
+                Home
+              </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
+            <li className="nav-item" data-aos="fade-left" data-aos-delay="200">
+              <Link className="nav-link custom-link" to="/about">
+                <FaInfoCircle size={20} className="me-2" />
+                About
+              </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact</Link>
+            <li className="nav-item" data-aos="fade-left" data-aos-delay="400">
+              <Link className="nav-link custom-link" to="/contact">
+                <FaEnvelope size={20} className="me-2" />
+                Contact
+              </Link>
             </li>
           </ul>
-          <form className="d-flex ms-auto" role="search">
+          <form className="d-flex ms-auto" role="search" data-aos="fade-up">
             <input
-              className="form-control me-2"
+              className="form-control me-2 custom-search"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
             <button className="btn custom-btn" type="submit">
-              Search
+              <FaSearch size={20} />
             </button>
           </form>
-          <div className="theme-toggle-container ms-3">
+          <div className="theme-toggle-container ms-3" data-aos="zoom-in">
             <label className="switch">
               <input type="checkbox" checked={darkMode} onChange={toggleTheme} />
               <span className="slider round">
@@ -66,9 +80,9 @@ const Header = () => {
               </span>
             </label>
           </div>
-          <div className="login-icon ms-3">
-            <Link className="login-link" to="/login" >
-              <FaUser size={24} /> {/* Iconița utilizatorului */}
+          <div className="login-icon ms-3" data-aos="zoom-in" data-aos-delay="500">
+            <Link className="login-link" to="/login">
+              <FaUser size={24} />
             </Link>
           </div>
         </div>

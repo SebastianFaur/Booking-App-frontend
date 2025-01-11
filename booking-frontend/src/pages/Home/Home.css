@@ -1,10 +1,12 @@
 .home-container {
-    height: 100vh; 
+    flex-grow: 1;
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
-    justify-content: start; 
+    justify-content: flex-start; 
     align-items: center;
     padding-top: 20px; 
+    padding-bottom:100px ;
   }
   
   .home-container h1 {
@@ -12,6 +14,8 @@
     margin-top: 40px;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    position: relative;
   }
   
   .home-container p {
@@ -19,17 +23,39 @@
     font-size: 1.2rem;
   }
 
-.custom-carousel {
-  max-width: 50%; 
-  margin: 0 auto; 
-  height: 400px; 
+  .carousel-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; 
+    margin-top: 40px;
+  }
+  
+  .carousel-box {
+    flex: 1;
+    margin: 20px;
+    max-width: 25%; 
+  }
+  
+  
+  .custom-carousel img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: black;
+  }
+  
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+  min-height: 100vh; 
 }
 
-
-  
-  body{
-    justify-content: center;
-  }
 
   .typing-text {
     font-size: 3rem;
@@ -42,13 +68,34 @@
     animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
   }
   
+  .booking-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    margin: 20px auto; /* Centrare și distanță */
+  }
+  .booking-widget .form-select {
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+  }
+
+  
+  
+  
   /* Animația de tipărire */
   @keyframes typing {
     from {
       width: 0;
     }
     to {
-      width: 35%;
+      width: 60%;
     }
   }
   
