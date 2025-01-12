@@ -1,0 +1,56 @@
+.favorite-page {
+    padding: 50px;
+    background: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  .favorite-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centrare a caruselelor */
+  }
+  
+  .carousel-box {
+    width: 500px; /* Dimensiune mai mare */
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adăugare efect de umbră */
+  }
+  
+  .carousel-box:hover {
+    transform: scale(1.05); /* Efect de hover mai pronunțat */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .carousel-title {
+    margin-bottom: 15px;
+    font-size: 1.5rem; /* Titlu mai mare */
+    font-weight: bold;
+    color: #444;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  .carousel-image {
+    border-radius: 20px;
+    height: 300px; /* Dimensiune mai mare pentru imagini */
+    object-fit: cover;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 12px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px; /* Mărime mai mare pentru butoane */
+  }
+  

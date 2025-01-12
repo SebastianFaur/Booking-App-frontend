@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { useState, useEffect } from 'react';
-import { FaSun, FaMoon, FaUser, FaSearch, FaHome, FaInfoCircle, FaEnvelope } from 'react-icons/fa'; 
+import { FaSun, FaMoon, FaUser, FaSearch, FaHome, FaInfoCircle, FaEnvelope, FaHeart } from 'react-icons/fa'; // Importăm FaHeart pentru iconița de favorite
 import AOS from 'aos';  // Importăm AOS
 import 'aos/dist/aos.css'; // Importăm stilurile AOS
 
@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });  
+    AOS.init({ duration: 1000 });
     if (darkMode) {
       document.body.classList.add('dark');
       document.body.classList.remove('light');
@@ -58,6 +58,13 @@ const Header = () => {
               <Link className="nav-link custom-link" to="/contact">
                 <FaEnvelope size={20} className="me-2" />
                 Contact
+              </Link>
+            </li>
+            {/* Iconița pentru favorite */}
+            <li className="nav-item" data-aos="fade-left" data-aos-delay="600">
+              <Link className="nav-link custom-link" to="/favorites">
+                <FaHeart size={20} className="me-2" />
+                Favorites
               </Link>
             </li>
           </ul>
