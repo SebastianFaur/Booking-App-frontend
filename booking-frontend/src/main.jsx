@@ -12,6 +12,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Login from './pages/Login/login.jsx';
 import Signup from './pages/Signup/signup.jsx';
 import Favorites from './pages/Favorites.jsx';
+import RoomsList from './pages/RoomsList.jsx'
 import { FavoritesProvider } from './context/FavoritesContext'; // Importăm FavoritesProvider
 
 const router = createBrowserRouter([
@@ -69,6 +70,16 @@ const router = createBrowserRouter([
         <Header />
         <Favorites />
       </FavoritesProvider>
+    ),
+  },
+  {
+    path: "/RoomsList", // Path nou pentru camere
+    element: (
+      <>
+        <Header />
+        <RoomsList /> {/* Afișăm lista de camere */}
+        <Footer />
+      </>
     ),
   },
 ]);
